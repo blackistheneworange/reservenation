@@ -6,6 +6,7 @@ export default function MyReservation(props){
 	const [reservation,setReservation]=useState(true)
 	const [details,setDetails]=useState(null)
 	const [loading,setLoading]=useState(false)
+	const [loading2,setLoading2]=useState(false)
 
 	useEffect(()=>{
 
@@ -38,7 +39,7 @@ export default function MyReservation(props){
 
 	function handleDelete(){
 
-		setLoading(true)
+		setLoading2(true)
 
 		axios.delete('/reserve',{withCredentials:true})
 		.then(res=>{
@@ -48,7 +49,7 @@ export default function MyReservation(props){
 			alert(err)
 		})
 		.finally(e=>{
-			setLoading(false)
+			setLoading2(false)
 		})
 	}
 
@@ -80,7 +81,7 @@ export default function MyReservation(props){
 
 		 <div className='control-buttons'>
 			<button className='waves-effect waves-blue btn light-blue lighten-1' onClick={props.handleEdit}>Edit</button>
-			<button className='waves-effect waves-blue btn light-blue lighten-1' style={{marginLeft:'16px'}} onClick={handleDelete}>{loading?<span className='spinner'></span>:<span>Cancel</span>}</button>
+			<button className='waves-effect waves-blue btn light-blue lighten-1' style={{marginLeft:'16px'}} onClick={handleDelete}>{loading2?<span className='spinner'></span>:<span>Cancel</span>}</button>
 
 		 </div>
 		  
