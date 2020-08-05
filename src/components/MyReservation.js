@@ -60,7 +60,7 @@ export default function MyReservation(props){
 		<h4><u>My Reservation</u></h4>
 
 		{loading?
-			<center><span style={{margin:'42px 0'}}  className='spinner2'></span></center>
+			<center><div style={{margin:'60px 0'}}  className='spinner2'></div></center>
 		:
 
 		!reservation?
@@ -81,7 +81,7 @@ export default function MyReservation(props){
 
 		 <div className='control-buttons'>
 			<button className='waves-effect waves-blue btn light-blue lighten-1' onClick={props.handleEdit}>Edit</button>
-			<button className='waves-effect waves-blue btn light-blue lighten-1' style={{marginLeft:'16px'}} onClick={handleDelete}>{loading2?<span className='spinner'></span>:<span>Cancel</span>}</button>
+			<button className='waves-effect waves-blue btn light-blue lighten-1' style={{marginLeft:'16px'}} onClick={handleDelete}>{loading2?<div className='spinner'></div>:<span>Cancel</span>}</button>
 
 		 </div>
 		  
