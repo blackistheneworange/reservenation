@@ -1,6 +1,6 @@
 const jwt=require('jsonwebtoken')
 
-const secret='1234'||process.env.ACCESS_TOKEN_SECRET;
+const secret=process.env.ACCESS_TOKEN_SECRET || '1234';
 
 exports.attachUser=(req,res,next)=>{
 	const token=req.cookies['reserve-nation']

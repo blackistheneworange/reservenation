@@ -4,7 +4,7 @@ const jwt=require('jsonwebtoken')
 
 const db=require('../database')
 
-const secret='1234' || process.env.ACCESS_TOKEN_SECRET;
+const secret=process.env.ACCESS_TOKEN_SECRET || '1234';
 
 router.post('/login',async (req,res)=>{
 

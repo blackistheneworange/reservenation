@@ -5,7 +5,7 @@ const userRouter=require('./userRouter')
 const auth=require('./authRouter')
 const db=require('../database')
 
-const secret='1234'||process.env.ACCESS_TOKEN_SECRET;
+const secret=process.env.ACCESS_TOKEN_SECRET || '1234'
 
 const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
