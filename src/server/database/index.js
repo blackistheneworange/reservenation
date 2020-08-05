@@ -1,6 +1,6 @@
 const mongodb=require('mongodb');
 
-const url= process.env.MONGO_URI||'mongodb://localhost:27017'
+const url= process.env.MONGODB_URI||'mongodb://localhost:27017'
 const dbName='reserve-nation';
 
 const insertDB=require('./insert')
