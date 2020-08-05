@@ -8,7 +8,7 @@ export default function Header(props){
 
 	function handleLogout(){
 
-		axios.post('http://localhost:3000/logout',{},{withCredentials:true})
+		axios.post('/logout',{})
 		.then(res=>{
 			props.setAuthenticatedStatus()
 			history.push({
@@ -26,7 +26,7 @@ export default function Header(props){
 		<h4><b>Reserve Nation</b></h4>
 
 		{props.authenticated?
-		<button style={{marginTop:'10px'}} className='white-text btn-small btn-flat' onClick={handleLogout}>Logout</button>
+		<button style={{marginTop:'16px'}} className='white-text btn-small btn-flat' onClick={handleLogout}>Logout</button>
 		:''}
 		</div>
 		</div>

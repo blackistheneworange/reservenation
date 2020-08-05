@@ -38,7 +38,7 @@ export default function Register(){
 		setLoading(true)
 		setError(null)
 
-		axios.post('http://localhost:3000/register',credentials)
+		axios.post('/register',credentials)
 		.then(res=>{
 			if(res.data==="Success"){
 			  return history.push({

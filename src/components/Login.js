@@ -40,7 +40,7 @@ function Login(props){
 
 		setLoading(true)
 	
-		axios.post('http://localhost:3000/login',{email:credentials.email,password:credentials.password},{withCredentials:true})
+		axios.post('/login',{email:credentials.email,password:credentials.password})
 		.then(res=>{
 		
 			if(res.data==="Success"){

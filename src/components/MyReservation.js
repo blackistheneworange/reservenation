@@ -11,7 +11,7 @@ export default function MyReservation(props){
 
 		setLoading(true)
 
-		axios.get('http://localhost:3000/reserve',{withCredentials:true})
+		axios.get('/reserve',{withCredentials:true})
 		.then(res=>{
 			
 			if(res.data.seats){
@@ -38,7 +38,7 @@ export default function MyReservation(props){
 
 	function handleDelete(){
 
-		axios.delete('http://localhost:3000/reserve',{withCredentials:true})
+		axios.delete('/reserve',{withCredentials:true})
 		.then(res=>{
 			setReservation(false)
 		})

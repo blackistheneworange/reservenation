@@ -35,7 +35,7 @@ export default function ReservationForm(props){
 		setLoading(true)
 
 		if(props.status){
-		axios.put('http://localhost:3000/reserve',{seats:details.seats,date:details.date,time:details.time,fullDate:props.data.date===details.date?props.data.fullDate:Date.now()},{withCredentials:true})
+		axios.put('/reserve',{seats:details.seats,date:details.date,time:details.time})
 		.then(res=>{
 			props.handleReservation()
 		})
@@ -45,7 +45,7 @@ export default function ReservationForm(props){
 		}
 
 		else{
-		axios.post('http://localhost:3000/reserve',{seats:details.seats,date:details.date,time:details.time,fullDate:Date.now()},{withCredentials:true})
+		axios.post('/reserve',{seats:details.seats,date:details.date,time:details.time})
 		.then(res=>{
 			
 			props.handleReservation()

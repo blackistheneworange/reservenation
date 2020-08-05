@@ -16,7 +16,7 @@ export default function App(){
 	const [name,setName]=useState("")
    
 	useEffect(()=>{
-		axios.get('http://localhost:3000/user',{withCredentials:true})
+		axios.get('/user')
 		.then(res=>{
 			if(res.data){
 				

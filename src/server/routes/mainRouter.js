@@ -7,6 +7,8 @@ const db=require('../database')
 
 const secret='1234'||process.env.ACCESS_TOKEN_SECRET;
 
+const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
 router.use(auth.attachUser)
 
 router.route('/reserve')
@@ -18,6 +20,17 @@ router.route('/reserve')
 
 	const reservation=await db.find.findOne('reservations',req.user,'email')
 	if(!reservation){
+		return res.send("Not Found")
+	}
+
+	const date=reservation.date.split(" ")
+	const year=parseInt(date[3])
+	const month=date[2]
+	const day=parseInt(date[1])
+
+	if(new Date().getFullYear()>year || new Date().getMonth()>months.indexOf(month) || new Date().getDate()>day){
+		
+		await db.delete.deleteOne('reservations',req.user,'email')
 		return res.send("Not Found")
 	}
 	res.send(reservation)
